@@ -1,0 +1,116 @@
+body {
+    /* background: black; */
+    background: linear-gradient(180deg, black, 50%, rgb(0, 10, 48));
+    background-attachment: fixed;
+    color: white;
+    font-family: 'DINPro', 'Segoe UI', Tahoma, Verdana, sans-serif;
+    margin: 2rem;
+}
+
+h1:hover {
+    text-shadow: 0px 10px #0449a9;
+    cursor: pointer;
+}
+
+h2:hover {
+    cursor: pointer;
+}
+  
+h1, h2 {
+    transition: color 0.3s, transform 0.3s, text-shadow 0.3s;
+}
+
+h3 {
+    font-size: 1.4rem;
+}
+
+.planets, .moons, .solar-system-objects {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+header, section > h2 {
+    text-align: center;
+    grid-column: span 3;
+}
+
+.solar-system-overview > p {
+    text-align: center;
+}
+
+.planets > *, .moons > *, .solar-system-objects > * {
+    padding: 1rem;
+    border: 4px dashed rgba(255, 255, 255, 0.5);
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.planets > * {
+    border-color: rgb(44, 99, 201, 0.5);
+}
+
+.moons > * {
+    border-color: rgb(255, 126, 97, 0.5);
+}
+
+.solar-system-objects > * {
+    border-color: rgb(49, 206, 198, 0.5);
+}
+
+.planets>*:hover, .moons>*:hover, .solar-system-objects>*:hover {
+    border-radius: 2rem 0;
+    transform: scale(1.03);
+}
+
+article p, article ul {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.5s ease;
+  }
+  
+.active p, .active ul {
+    max-height: fit-content;
+    opacity: 1;
+  }
+
+@media (max-width: 768px) {
+    .planets, .moons, .solar-system-objects {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    header, section > h2 {
+        grid-column: initial;
+        margin-bottom: 1rem;
+    }
+
+    .planets > *, .moons > *, .solar-system-objects > * {
+        max-width: 480px;
+    }
+}
+
+footer {
+    margin-top: 4rem;
+}
+
+@media (max-width: 480px) {
+    body {
+        margin: 1rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    .planets, .moons, .solar-system-objects {
+        gap: 20px;
+    }
+
+    .planets > *, .moons > *, .solar-system-objects > * {
+        padding: 0.8rem;
+    }
+}
