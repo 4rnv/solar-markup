@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'DINPro';
+    src: url(./DINProLight.otf);
+}
+
 body {
     /* background: black; */
     background: linear-gradient(180deg, black, 50%, rgb(0, 10, 48));
