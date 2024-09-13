@@ -18,13 +18,24 @@ html::-webkit-scrollbar-thumb {
     border-radius: 0 100px;
 }
 
-body {
+body, html {
     /* background: black; */
     background: linear-gradient(180deg, black, 50%, rgb(0, 10, 48));
     background-attachment: fixed;
     color: white;
     font-family: 'DINPro', 'Segoe UI', Tahoma, Verdana, sans-serif;
-    margin: 2rem;
+    margin: 1rem;
+    padding: 0;
+    height: 100%;
+}
+
+#star-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
 }
 
 h1:hover {
@@ -97,12 +108,16 @@ article p, article ul {
     overflow: hidden;
     opacity: 0;
     transition: all 0.5s ease;
-  }
+}
   
 .active p, .active ul {
     max-height: fit-content;
     opacity: 1;
-  }
+}
+
+footer {
+    margin: 2rem 0;
+}
 
 @media (max-width: 768px) {
     .planets, .moons, .solar-system-objects {
@@ -120,10 +135,6 @@ article p, article ul {
     .planets > *, .moons > *, .solar-system-objects > * {
         max-width: 480px;
     }
-}
-
-footer {
-    margin-top: 4rem;
 }
 
 @media (max-width: 480px) {
